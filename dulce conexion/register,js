@@ -1,0 +1,112 @@
+document.addEventListener('DOMContentLoaded', function() {
+    const registerForm = document.getElementById('registerForm');
+    const togglePasswordBtns = document.querySelectorAll('.toggle-password');
+    
+    // Mostrar/ocultar contraseña
+    togglePasswordBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const input = this.parentElement.querySelector('input');
+            const icon = this.querySelector('i');
+            
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.classList.replace('fa-eye', 'fa-eye-slash');
+            } else {
+                input.type = 'password';
+                icon.classList.replace('fa-eye-slash', 'fa-eye');
+            }
+        });
+    });
+    
+    // Validación del formulario
+    if (registerForm) {
+        registerForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            let isValid = true;
+            
+            // Validar campos requeridos
+            const requiredFields = this.querySelectorAll('[required]');
+            requiredFields.forEach(field => {
+                const formGroup = field.closest('.form-group');
+                
+                if (!field.value.trim()) {
+                    formGroup.classList.add('error');
+                    isValid = false;
+                } else {
+                    formGroup.classList.remove('error');
+                }
+            });
+            
+            // Validar contraseñas coincidentes
+            const password = document.getElementById('password');
+            const confirmPassword = document.getElementById('confirmPassword');
+            
+            if (password.value !== confirmPassword.value) {
+                confirmPassword.closest('.form-group').classList.add('error');
+                isValid = false;
+                
+                // Crear mensaje de error si no existe
+                if (!confirmPassword.nextElementSibling.classList.contains('error-message')) {
+                    const errorMsg = document.createElement('span');
+                    errorMsg.className = 'error-message';
+                    errorMsg.textContent = 'Las contraseñas no coinciden';
+                    confirmPassword.closest('.form-group').appendChild(errorMsg);
+                }
+            } else {
+                confirmPassword.closest('.form-group').classList.remove('error');
+                const errorMsg = confirmPassword.nextElementSibling;
+                if (errorMsg && errorMsg.classList.contains('error-message')) {
+                    errorMsg.remove();
+                }
+            }
+            
+            // Validar email
+            const email = document.getElementById('email');
+            if (email.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+                email.closest('.form-group').classList.add('error');
+                isValid = false;
+            }
+            
+            // Validar fecha de nacimiento
+            const birthDate = document.getElementById('birthDate');
+            if (birthDate.value) {
+                const birthDateObj = new Date(birthDate.value);
+                const today = new Date();
+                let age = today.getFullYear() - birthDateObj.getFullYear();
+                const monthDiff = today.getMonth() - birthDateObj.getMonth();
+                
+                if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDateObj.getDate())) {
+                    age--;
+                }
+                
+                if (age < 18) {
+                    birthDate.closest('.form-group').classList.add('error');
+                    isValid = false;
+                }
+            }
+            
+            // Si todo es válido, enviar formulario
+            if (isValid) {
+                // Simular envío (en un caso real sería una petición AJAX)
+                registerForm.querySelector('button[type="submit"]').disabled = true;
+                
+                setTimeout(() => {
+                    alert('¡Registro exitoso! Redirigiendo...');
+                    window.location.href = 'perfil.html';
+                }, 1500);
+            }
+        });
+    }
+    
+    // Validación en tiempo real
+    const inputs = document.querySelectorAll('input, select, textarea');
+    inputs.forEach(input => {
+        input.addEventListener('input', function() {
+            if (this.hasAttribute('required') && !this.value.trim()) {
+                this.closest('.form-group').classList.add('error');
+            } else {
+                this.closest('.form-group').classList.remove('error');
+            }
+        });
+    });
+});

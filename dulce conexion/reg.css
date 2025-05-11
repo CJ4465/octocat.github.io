@@ -1,0 +1,571 @@
+:root {
+    --gold: #D4AF37;
+    --dark: #1A1A1A;
+    --light: #F5F5F5;
+    --cream: #FFF8E1;
+    --soft-pink: #F8E1E7;
+    --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Estilos generales */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--light);
+    color: var(--dark);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Barra de navegación premium */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    background-color: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    transition: var(--transition);
+}
+
+.navbar.scrolled {
+    padding: 1rem 5%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+}
+
+.logo i {
+    font-size: 1.8rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: 600;
+    transition: var(--transition);
+    position: relative;
+    font-size: 1.1rem;
+    padding: 0.5rem 0;
+}
+
+.home-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 15px;
+    background-color: rgba(212, 175, 55, 0.1);
+    border-radius: 50px;
+    transition: var(--transition);
+}
+
+.home-link:hover {
+    background-color: rgba(212, 175, 55, 0.2);
+}
+
+.home-link i {
+    font-size: 1rem;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: var(--gold);
+    bottom: 0;
+    left: 0;
+    transition: var(--transition);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-links a:hover {
+    color: var(--gold);
+}
+
+.nav-icons {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 1.3rem;
+}
+
+.nav-icons a {
+    color: var(--dark);
+    transition: var(--transition);
+}
+
+.nav-icons a:hover {
+    color: var(--gold);
+    transform: translateY(-3px);
+}
+
+.cart-count {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: var(--gold);
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+
+/* Header de Suscripción */
+.subscription-header {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1509440159596-0249088772ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 180px 20px 100px;
+    margin-bottom: 60px;
+}
+
+.subscription-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.subscription-header p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 30px;
+}
+
+/* Sección de Beneficios */
+.benefits-section {
+    padding: 60px 0;
+    background-color: white;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+}
+
+.section-subtitle {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.benefit-card {
+    background: var(--cream);
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    transition: var(--transition);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.benefit-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.benefit-icon {
+    font-size: 3rem;
+    color: var(--gold);
+    margin-bottom: 20px;
+}
+
+.benefit-card h3 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+/* Planes de Suscripción */
+.plans-section {
+    padding: 80px 0;
+    background-color: var(--light);
+}
+
+.plans-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.plan-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: var(--transition);
+    position: relative;
+}
+
+.plan-card.popular {
+    border: 2px solid var(--gold);
+}
+
+.plan-card.popular::before {
+    content: 'MÁS POPULAR';
+    position: absolute;
+    top: 15px;
+    right: -30px;
+    background: var(--gold);
+    color: white;
+    padding: 5px 30px;
+    transform: rotate(45deg);
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.plan-header {
+    padding: 30px;
+    text-align: center;
+    background: linear-gradient(135deg, var(--cream), var(--soft-pink));
+}
+
+.plan-card.popular .plan-header {
+    background: linear-gradient(135deg, var(--gold), #E8C547);
+}
+
+.plan-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.plan-price {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.plan-price span {
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+.plan-duration {
+    color: #666;
+}
+
+.plan-features {
+    padding: 30px;
+}
+
+.plan-features ul {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.plan-features li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+}
+
+.plan-features li i {
+    color: var(--gold);
+    margin-right: 10px;
+}
+
+.plan-button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background: var(--dark);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: center;
+    text-decoration: none;
+}
+
+.plan-card.popular .plan-button {
+    background: var(--gold);
+}
+
+.plan-button:hover {
+    opacity: 0.9;
+    transform: translateY(-3px);
+}
+
+/* Formulario de Pago */
+.payment-section {
+    padding: 80px 0;
+    background-color: white;
+}
+
+.payment-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.payment-header {
+    padding: 30px;
+    background: linear-gradient(135deg, var(--dark), #333);
+    color: white;
+    text-align: center;
+}
+
+.payment-header h2 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 10px;
+}
+
+.payment-body {
+    padding: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.form-control:focus {
+    border-color: var(--gold);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.payment-methods {
+    display: flex;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.payment-method {
+    flex: 1;
+    text-align: center;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.payment-method.selected {
+    border-color: var(--gold);
+    background: rgba(212, 175, 55, 0.1);
+}
+
+.payment-method i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.payment-method.selected i {
+    color: var(--gold);
+}
+
+.submit-button {
+    width: 100%;
+    padding: 15px;
+    background: var(--gold);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-top: 20px;
+}
+
+.submit-button:hover {
+    background: #C19A00;
+    transform: translateY(-3px);
+}
+
+/* Preguntas Frecuentes */
+.faq-section {
+    padding: 80px 0;
+    background-color: var(--light);
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    margin-bottom: 20px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.faq-question {
+    padding: 20px;
+    background: white;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: var(--transition);
+}
+
+.faq-question:hover {
+    background: #f9f9f9;
+}
+
+.faq-question i {
+    transition: var(--transition);
+}
+
+.faq-item.active .faq-question i {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background: white;
+}
+
+.faq-item.active .faq-answer {
+    padding: 20px;
+    max-height: 500px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .subscription-header {
+        padding: 150px 20px 80px;
+    }
+    
+    .subscription-header h1 {
+        font-size: 3rem;
+    }
+    
+    .nav-links {
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem 5%;
+    }
+    
+    .subscription-header {
+        padding: 120px 20px 60px;
+    }
+    
+    .subscription-header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .plan-card.popular::before {
+        right: -25px;
+        padding: 5px 25px;
+        font-size: 0.7rem;
+    }
+    
+    .home-link span {
+        display: none;
+    }
+    
+    .home-link {
+        padding: 8px 12px;
+    }
+    
+    .home-link i {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .subscription-header h1 {
+        font-size: 2rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .payment-methods {
+        flex-direction: column;
+    }
+}

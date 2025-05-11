@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Dulce Conexión</title>
+    <link rel="stylesheet" href="loguin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-header">
+            <h1>Dulce Conexión</h1>
+            <p>Inicia sesión en tu cuenta</p>
+        </div>
+        
+        <div id="message" class="message hidden"></div>
+        
+        <form id="loginForm" class="login-form">
+            <div class="form-group">
+                <label for="email">Correo electrónico</label>
+                <input type="email" id="email" name="email" required>
+                <i class="fas fa-envelope"></i>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Contraseña</label>
+                <input type="password" id="password" name="password" required>
+                <i class="fas fa-lock"></i>
+                <span class="show-password" id="showPassword"><i class="fas fa-eye"></i></span>
+            </div>
+            
+            <div class="form-options">
+                <label class="remember-me">
+                    <input type="checkbox" id="rememberMe">
+                    <span>Recordar mi cuenta</span>
+                </label>
+                <a href="registro.html" class="forgot-password">¿Olvidaste tu contraseña?</a>
+            </div>
+            
+            <button type="submit" class="login-button">
+                <i class="fas fa-sign-in-alt"></i><a href="index.html" class="in">Iniciar sesión</a>
+            </button>
+        </form>
+        
+        <div class="login-footer">
+            <p>¿No tienes una cuenta? <a href="iniciodsec.html">Regístrate aquí</a></p>
+        </div>
+    </div>
+
+    <!-- Font Awesome para iconos -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- Script de autenticación -->
+    <script>
+        // Configuración
+const API_URL = 'http://localhost:3000/api';
+
+// Elementos del DOM
+const loginForm = document.getElementById('loginForm');
+const emailInput = document.getElementById('email');
+const passwordInput = document.getElementById('password');
+const rememberMe = document.getElementById('rememberMe');
+const showPassword = document.getElementById('showPassword');
+const messageDiv = document.getElementById('message');
+
+// Mostrar/ocultar contraseña
+showPassword.addEventListener('click', () => {
+    const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+    passwordInput.setAttribute('type', type);
+    showPassword.innerHTML = type === 'password' ? '<i class="fas fa-eye"></i>' : '<i class="fas fa-eye-slash"></i>';
+});
+
+// Verificar credenciales guardadas
+document.addEventListener('DOMContentLoaded', () => {
+    const savedEmail = localStorage.getItem('rememberedEmail');
+    if (savedEmail) {
+        emailInput.value = savedEmail;
+        rememberMe.checked = true;
+    }
+});
+
+// Manejar el envío del formulario
+loginForm
+    </script>
+</body>
+</html>

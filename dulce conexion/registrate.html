@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suscripciones Premium | Dulce Conexión</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="reg.css">
+</head>
+<body>
+   <!-- Barra de navegación con botón de Inicio -->
+   <nav class="navbar">
+    <a href="index.html" class="logo">
+        <i class="fas fa-crown"></i>
+        Dulce Conexión
+    </a>
+    <div class="nav-links">
+        <a href="index.html" class="home-link"><i class="fas fa-home"></i> <span>Inicio</span></a>
+    </div>
+    <div class="nav-icons">
+        <a href="#"><i class="fas fa-search"></i></a>
+        <a href="#"><i class="fas fa-user"></i></a>
+        <a href="#" class="cart-icon">
+            <i class="fas fa-shopping-bag"></i>
+            <span class="cart-count">0</span>
+        </a>
+    </div>
+</nav>
+
+<!-- Header de Suscripción -->
+<header class="subscription-header" id="inicio">
+    <div class="container">
+        <h1>Club Dulce Conexión</h1>
+        <p>Únete a nuestro exclusivo programa de membresía y disfruta de beneficios premium, descuentos especiales y entregas prioritarias cada mes.</p>
+    </div>
+</header>
+
+<!-- Sección de Beneficios -->
+<section class="benefits-section" id="beneficios">
+    <div class="container">
+        <h2 class="section-title">Beneficios Exclusivos</h2>
+        <p class="section-subtitle">Como miembro de nuestro club premium, disfrutarás de estas ventajas:</p>
+        
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <i class="fas fa-gift"></i>
+                </div>
+                <h3>Caja Mensual</h3>
+                <p>Recibe una selección cuidadosamente curada de nuestros postres más exclusivos cada mes.</p>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <i class="fas fa-percentage"></i>
+                </div>
+                <h3>20% de Descuento</h3>
+                <p>Disfruta de un 20% de descuento en todos los pedidos adicionales que realices.</p>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <i class="fas fa-shipping-fast"></i>
+                </div>
+                <h3>Envío Prioritario</h3>
+                <p>Tus pedidos serán enviados con prioridad y llegarán más rápido que nunca.</p>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <i class="fas fa-star"></i>
+                </div>
+                <h3>Productos Exclusivos</h3>
+                <p>Acceso a ediciones limitadas y sabores exclusivos solo para miembros.</p>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <i class="fas fa-calendar-alt"></i>
+                </div>
+                <h3>Eventos VIP</h3>
+                <p>Invitaciones a catas privadas, talleres y eventos exclusivos para miembros.</p>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h3>Regalo de Bienvenida</h3>
+                <p>Recibe un exclusivo kit de bienvenida con utensilios premium para postres.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Sección de Planes -->
+<section class="plans-section" id="planes">
+    <div class="container">
+        <h2 class="section-title">Elige Tu Plan</h2>
+        <p class="section-subtitle">Selecciona la membresía que mejor se adapte a tus necesidades dulces.</p>
+        
+        <div class="plans-container">
+            <!-- Plan Básico -->
+            <div class="plan-card">
+                <div class="plan-header">
+                    <h3 class="plan-name">Dulce</h3>
+                    <div class="plan-price">$29<span>/mes</span></div>
+                    <div class="plan-duration">Facturado mensualmente</div>
+                </div>
+                <div class="plan-features">
+                    <ul>
+                        <li><i class="fas fa-check"></i> 2 postres seleccionados</li>
+                        <li><i class="fas fa-check"></i> 15% de descuento adicional</li>
+                        <li><i class="fas fa-check"></i> Envío estándar gratuito</li>
+                        <li><i class="fas fa-check"></i> Acceso a recetas exclusivas</li>
+                        <li><i class="fas fa-check"></i> Boletín mensual</li>
+                    </ul>
+                    <a href="#pago" class="plan-button">Seleccionar Plan</a>
+                </div>
+            </div>
+            
+            <!-- Plan Popular -->
+            <div class="plan-card popular">
+                <div class="plan-header">
+                    <h3 class="plan-name">Premium</h3>
+                    <div class="plan-price">$59<span>/mes</span></div>
+                    <div class="plan-duration">Facturado mensualmente</div>
+                </div>
+                <div class="plan-features">
+                    <ul>
+                        <li><i class="fas fa-check"></i> 4 postres seleccionados</li>
+                        <li><i class="fas fa-check"></i> 20% de descuento adicional</li>
+                        <li><i class="fas fa-check"></i> Envío prioritario gratuito</li>
+                        <li><i class="fas fa-check"></i> 1 postre sorpresa mensual</li>
+                        <li><i class="fas fa-check"></i> Acceso a eventos VIP</li>
+                        <li><i class="fas fa-check"></i> Kit de bienvenida</li>
+                    </ul>
+                    <a href="#pago" class="plan-button">Seleccionar Plan</a>
+                </div>
+            </div>
+            
+            <!-- Plan Anual -->
+            <div class="plan-card">
+                <div class="plan-header">
+                    <h3 class="plan-name">Élite</h3>
+                    <div class="plan-price">$49<span>/mes</span></div>
+                    <div class="plan-duration">Facturado anualmente ($588)</div>
+                </div>
+                <div class="plan-features">
+                    <ul>
+                        <li><i class="fas fa-check"></i> 4 postres seleccionados</li>
+                        <li><i class="fas fa-check"></i> 25% de descuento adicional</li>
+                        <li><i class="fas fa-check"></i> Envío prioritario gratuito</li>
+                        <li><i class="fas fa-check"></i> 2 postres sorpresa mensuales</li>
+                        <li><i class="fas fa-check"></i> Acceso prioritario a eventos</li>
+                        <li><i class="fas fa-check"></i> Kit de bienvenida premium</li>
+                        <li><i class="fas fa-check"></i> 1 clase magistral anual</li>
+                    </ul>
+                    <a href="#pago" class="plan-button">Seleccionar Plan</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Sección de Pago -->
+<section class="payment-section" id="pago">
+    <div class="container">
+        <div class="payment-container">
+            <div class="payment-header">
+                <h2>Completa Tu Suscripción</h2>
+                <p>Plan seleccionado: <strong>Premium - $59/mes</strong></p>
+            </div>
+            <div class="payment-body">
+                <form id="subscriptionForm">
+                    <h3>Información Personal</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">Nombre</label>
+                            <input type="text" id="firstName" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Apellido</label>
+                            <input type="text" id="lastName" class="form-control" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico</label>
+                        <input type="email" id="email" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="address">Dirección de Envío</label>
+                        <input type="text" id="address" class="form-control" required>
+                    </div>
+                    
+                    <h3 style="margin-top: 30px;">Método de Pago</h3>
+                    <div class="payment-methods">
+                        <div class="payment-method selected" data-method="credit">
+                            <i class="fab fa-cc-visa"></i>
+                            <div>Tarjeta de Crédito</div>
+                        </div>
+                        <div class="payment-method" data-method="paypal">
+                            <i class="fab fa-paypal"></i>
+                            <div>PayPal</div>
+                        </div>
+                    </div>
+                    
+                    <div id="creditCardForm">
+                        <div class="form-group">
+                            <label for="cardNumber">Número de Tarjeta</label>
+                            <input type="text" id="cardNumber" class="form-control" placeholder="1234 5678 9012 3456">
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="expiryDate">Fecha de Expiración</label>
+                                <input type="text" id="expiryDate" class="form-control" placeholder="MM/AA">
+                            </div>
+                            <div class="form-group">
+                                <label for="cvv">CVV</label>
+                                <input type="text" id="cvv" class="form-control" placeholder="123">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="cardName">Nombre en la Tarjeta</label>
+                            <input type="text" id="cardName" class="form-control">
+                        </div>
+                    </div>
+                    
+                    <div id="paypalForm" style="display: none;">
+                        <p>Serás redirigido a PayPal para completar tu pago después de enviar el formulario.</p>
+                    </div>
+                    
+                    <div class="form-group" style="margin-top: 20px;">
+                        <input type="checkbox" id="terms" required>
+                        <label for="terms" style="display: inline; font-weight: normal;">Acepto los <a href="terminos.html" style="color: var(--gold);">Términos y Condiciones</a> y la <a href="politica.html" style="color: var(--gold);">Política de Privacidad</a></label>
+                    </div>
+                    
+                    <button type="submit" class="submit-button">Completar Suscripción</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Preguntas Frecuentes -->
+<section class="faq-section" id="faq">
+    <div class="container">
+        <h2 class="section-title">Preguntas Frecuentes</h2>
+        
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>¿Puedo cancelar mi suscripción en cualquier momento?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Sí, puedes cancelar tu suscripción en cualquier momento desde tu panel de usuario. La cancelación será efectiva al final del período de facturación actual y no se realizarán cargos adicionales.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>¿Qué pasa si no estoy en casa cuando llega mi envío?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Nuestros postres son enviados en empaques especiales que mantienen la frescura por varias horas. Si no estás en casa, el paquete se dejará en un lugar seguro o se coordinará una nueva entrega según las políticas de la compañía de envíos.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>¿Puedo cambiar los postres que vienen en mi caja mensual?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Los miembros de nuestros planes Premium y Élite pueden personalizar hasta 2 de los postres en su caja mensual. Esta selección debe realizarse al menos 7 días antes del envío a través de tu panel de usuario.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>¿Ofrecen opciones para alergias o dietas especiales?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Sí, podemos adaptar tu suscripción para excluir ingredientes específicos como nueces, gluten o lácteos. Por favor, indícanos tus requerimientos en el momento de la suscripción o contáctanos para hacer ajustes.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>¿Cómo funciona el descuento para pedidos adicionales?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Tu descuento se aplicará automáticamente al iniciar sesión en tu cuenta. Simplemente agrega los productos a tu carrito y verás el descuento aplicado antes de finalizar la compra. El descuento no es acumulable con otras promociones.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    // Selección de método de pago
+    const paymentMethods = document.querySelectorAll('.payment-method');
+    const creditCardForm = document.getElementById('creditCardForm');
+    const paypalForm = document.getElementById('paypalForm');
+    
+    paymentMethods.forEach(method => {
+        method.addEventListener('click', () => {
+            paymentMethods.forEach(m => m.classList.remove('selected'));
+            method.classList.add('selected');
+            
+            if (method.dataset.method === 'credit') {
+                creditCardForm.style.display = 'block';
+                paypalForm.style.display = 'none';
+            } else {
+                creditCardForm.style.display = 'none';
+                paypalForm.style.display = 'block';
+            }
+        });
+    });
+    
+    // FAQ Acordeón
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', () => {
+            const item = question.parentElement;
+            item.classList.toggle('active');
+            
+            // Cerrar otros items
+            faqQuestions.forEach(q => {
+                if (q !== question) {
+                    q.parentElement.classList.remove('active');
+                }
+            });
+        });
+    });
+    
+    // Validación de formulario
+    const form = document.getElementById('subscriptionForm');
+    
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Aquí iría la validación real y el envío a tu backend
+        alert('¡Gracias por suscribirte al Club Dulce Conexión! Tu pago está siendo procesado.');
+        form.reset();
+    });
+    
+    // Formatear número de tarjeta
+    const cardNumber = document.getElementById('cardNumber');
+    
+    cardNumber.addEventListener('input', (e) => {
+        let value = e.target.value.replace(/\s+/g, '');
+        if (value.length > 0) {
+            value = value.match(new RegExp('.{1,4}', 'g')).join(' ');
+        }
+        e.target.value = value;
+    });
+    
+    // Formatear fecha de expiración
+    const expiryDate = document.getElementById('expiryDate');
+    
+    expiryDate.addEventListener('input', (e) => {
+        let value = e.target.value.replace(/\D/g, '');
+        if (value.length > 2) {
+            value = value.substring(0, 2) + '/' + value.substring(2, 4);
+        }
+        e.target.value = value;
+    });
+
+    // Efecto de scroll en navbar
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            document.querySelector('.navbar').classList.add('scrolled');
+        } else {
+            document.querySelector('.navbar').classList.remove('scrolled');
+        }
+    });
+</script>
+</body>
+</html>

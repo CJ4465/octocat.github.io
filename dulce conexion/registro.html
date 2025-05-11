@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar Contraseña | Dulce Conexión</title>
+    <link rel="stylesheet" href="regist.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="recovery-container">
+        <div class="recovery-card">
+            <!-- Logo premium -->
+            <div class="recovery-logo">
+                <i class="fas fa-crown"></i>
+                <span>Dulce Conexión</span>
+            </div>
+            
+            <h1>Recupera tu contraseña</h1>
+            <p class="recovery-subtitle">Ingresa tu correo electrónico para recibir instrucciones</p>
+            
+            <form id="recoveryForm" class="recovery-form">
+                <div class="form-group">
+                    <div class="input-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <input type="email" id="recoveryEmail" placeholder="Correo electrónico" required>
+                    <div class="underline"></div>
+                </div>
+                
+                <button type="submit" class="recovery-button">
+                    <i class="fas fa-paper-plane"></i> Enviar Instrucciones
+                </button>
+            </form>
+            
+            <div class="recovery-footer">
+                <p>¿Recordaste tu contraseña? <a href="inicio.html" class="gold-link">Inicia sesión aquí</a></p>
+                <p>¿No tienes una cuenta? <a href="registro.html" class="gold-link">Regístrate aquí</a></p>
+            </div>
+        </div>
+        
+        <!-- Mensaje de éxito (oculto inicialmente) -->
+        <div id="successMessage" class="recovery-success hidden">
+            <div class="success-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h2>¡Correo enviado!</h2>
+            <p>Hemos enviado instrucciones para restablecer tu contraseña a tu correo electrónico.</p>
+            <a href="inicio.html" class="back-to-login">Volver al inicio de sesión</a>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Perfil | Dulce Conexión</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        body {
+            background-color: #f9f5f0;
+            color: #333;
+        }
+        
+        /* Navbar (debe coincidir con tu diseño principal) */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: #8b5a2b;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #8b5a2b;
+        }
+        
+        .nav-icons {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav-icons a {
+            color: #333;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+        
+        .nav-icons a:hover {
+            color: #8b5a2b;
+        }
+        
+        /* Contenedor principal */
+        .profile-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 30px;
+        }
+        
+        /* Panel lateral */
+        .profile-sidebar {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            height: fit-content;
+            position: sticky;
+            top: 20px;
+        }
+        
+        .profile-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .profile-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background-color: #f0e6dc;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            color: #8b5a2b;
+            overflow: hidden;
+        }
+        
+        .profile-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .profile-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            color: #8b5a2b;
+            margin-bottom: 5px;
+        }
+        
+        .profile-email {
+            color: #777;
+            font-size: 14px;
+        }
+        
+        .profile-menu {
+            list-style: none;
+            margin-top: 30px;
+        }
+        
+        .profile-menu li {
+            margin-bottom: 10px;
+        }
+        
+        .profile-menu a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 15px;
+            color: #555;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+        
+        .profile-menu a:hover, .profile-menu a.active {
+            background-color: #f9f5f0;
+            color: #8b5a2b;
+        }
+        
+        .profile-menu a i {
+            width: 20px;
+            text-align: center;
+        }
+        
+        /* Contenido principal */
+        .profile-content {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+        
+        .profile-section {
+            margin-bottom: 40px;
+        }
+        
+        .profile-section h2 {
+            font-family: 'Playfair Display', serif;
+            color: #8b5a2b;
+            margin-bottom: 25px;
+            font-size: 24px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #f0e6dc;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .profile-section h2 i {
+            font-size: 20px;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        
+        .info-item {
+            margin-bottom: 20px;
+        }
+        
+        .info-label {
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .info-value {
+            font-size: 16px;
+            font-weight: 500;
+            padding: 10px 0;
+            border-bottom: 1px solid #f0e6dc;
+        }
+        
+        .edit-button {
+            background: none;
+            border: none;
+            color: #8b5a2b;
+            cursor: pointer;
+            font-size: 14px;
+            margin-left: 10px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 900px) {
+            .profile-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .profile-sidebar {
+                position: static;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .navbar {
+                padding: 15px 20px;
+            }
+            
+            .profile-content {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Barra de navegación (debe coincidir con tu diseño principal) -->
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fas fa-crown"></i>
+            Dulce Conexión
+        </div>
+        <div class="nav-links">
+            <a href="index.html#inicio">Inicio</a>
+            <a href="index.html#productos">Productos</a>
+            <a href="index.html#testimonios">Testimonios</a>
+            <a href="index.html#contacto">Contacto</a>
+        </div>
+        <div class="nav-icons">
+            <a href="#"><i class="fas fa-search"></i></a>
+            <a href="user.html"><i class="fas fa-user"></i></a>
+            <a href="carrito.html" class="cart-icon">
+                <i class="fas fa-shopping-bag"></i>
+                <span class="cart-count">0</span>
+            </a>
+        </div>
+    </nav>
+
+    <div class="profile-container">
+        <!-- Panel lateral -->
+        <div class="profile-sidebar">
+            <div class="profile-header">
+                <div class="profile-avatar">
+                    <i class="fas fa-user"></i>
+                    <!-- <img src="ruta/a/imagen-de-perfil.jpg" alt="Foto de perfil"> -->
+                </div>
+                <h3 class="profile-name" id="profile-fullname">Nombre Apellido</h3>
+                <p class="profile-email" id="profile-email">usuario@ejemplo.com</p>
+            </div>
+            
+            <ul class="profile-menu">
+                <li><a href="#" class="active"><i class="fas fa-user-circle"></i> Mi Perfil</a></li>
+                <li><a href="#"><i class="fas fa-shopping-bag"></i> Mis Pedidos</a></li>
+                <li><a href="#"><i class="fas fa-heart"></i> Favoritos</a></li>
+                <li><a href="#"><i class="fas fa-map-marker-alt"></i> Direcciones</a></li>
+                <li><a href="#"><i class="fas fa-cog"></i> Configuración</a></li>
+                <li><a href="#"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a></li>
+            </ul>
+        </div>
+        
+        <!-- Contenido principal -->
+        <div class="profile-content">
+            <!-- Sección de Información Personal -->
+            <div class="profile-section">
+                <h2><i class="fas fa-user-circle"></i> Información Personal</h2>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="info-label"><i class="fas fa-user"></i> Nombre(s)</div>
+                        <div class="info-value" id="profile-firstname">Nombre</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label"><i class="fas fa-user"></i> Apellido(s)</div>
+                        <div class="info-value" id="profile-lastname">Apellido</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label"><i class="fas fa-calendar-alt"></i> Fecha de Nacimiento</div>
+                        <div class="info-value" id="profile-birthdate">DD/MM/AAAA</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sección de Contacto -->
+            <div class="profile-section">
+                <h2><i class="fas fa-envelope"></i> Datos de Contacto</h2>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="info-label"><i class="fas fa-at"></i> Correo Electrónico</div>
+                        <div class="info-value" id="profile-email-value">usuario@ejemplo.com</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label"><i class="fas fa-phone"></i> Teléfono</div>
+                        <div class="info-value" id="profile-phone">+52 55 1234 5678</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label"><i class="fas fa-globe-americas"></i> País</div>
+                        <div class="info-value" id="profile-country">México</div>
+                    </div>
+                    <div class="info-item" style="grid-column: span 2;">
+                        <div class="info-label"><i class="fas fa-map-marker-alt"></i> Dirección</div>
+                        <div class="info-value" id="profile-address">Calle Ejemplo #123, Col. Ejemplo, CDMX, 12345</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sección de Seguridad -->
+            <div class="profile-section">
+                <h2><i class="fas fa-lock"></i> Seguridad</h2>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="info-label"><i class="fas fa-key"></i> Contraseña</div>
+                        <div class="info-value">••••••••</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label"><i class="fas fa-bell"></i> Preferencias</div>
+                        <div class="info-value" id="profile-newsletter">Recibe ofertas por correo</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Este script cargaría los datos del usuario desde localStorage o una API
+        document.addEventListener('DOMContentLoaded', function() {
+            // Obtener datos del registro (simulados aquí, en producción vendrían de localStorage o una API)
+            const userData = {
+                firstName: 'Ana',
+                lastName: 'García',
+                birthDate: '1990-05-15',
+                email: 'ana.garcia@ejemplo.com',
+                phone: '+52 55 1234 5678',
+                country: 'MX',
+                address: 'Av. Reforma #123, Col. Juárez, CDMX, 06600',
+                newsletter: true
+            };
+            
+            // Formatear fecha
+            const formattedDate = new Date(userData.birthDate).toLocaleDateString('es-ES', {
+                day: '2-digit',
+                month: '2-digit',
+                year: 'numeric'
+            });
+            
+            // Mostrar datos en el perfil
+            document.getElementById('profile-fullname').textContent = `${userData.firstName} ${userData.lastName}`;
+            document.getElementById('profile-firstname').textContent = userData.firstName;
+            document.getElementById('profile-lastname').textContent = userData.lastName;
+            document.getElementById('profile-birthdate').textContent = formattedDate;
+            document.getElementById('profile-email').textContent = userData.email;
+            document.getElementById('profile-email-value').textContent = userData.email;
+            document.getElementById('profile-phone').textContent = userData.phone;
+            document.getElementById('profile-address').textContent = userData.address;
+            document.getElementById('profile-newsletter').textContent = userData.newsletter ? 
+                'Recibe ofertas por correo' : 'No recibe ofertas';
+            
+            // Mostrar nombre del país
+            const countryNames = {
+                'MX': 'México',
+                'CO': 'Colombia',
+                'AR': 'Argentina',
+                'ES': 'España',
+                'US': 'Estados Unidos'
+            };
+            document.getElementById('profile-country').textContent = countryNames[userData.country] || userData.country;
+        });
+    </script>
+</body>
+</html>
